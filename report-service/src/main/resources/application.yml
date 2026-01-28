@@ -1,0 +1,12 @@
+server:
+  port: 18083
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/eventsdb
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest

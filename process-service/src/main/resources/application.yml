@@ -1,0 +1,13 @@
+#server:
+#  port: 8082
+#
+#spring:
+#  data:
+#    mongodb:
+#      uri: mongodb://mongo:27017/process-db
+server:
+  port: 18082
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/library

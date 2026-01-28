@@ -1,0 +1,18 @@
+type Book {
+    id: ID!
+    title: String!
+    available: Boolean!
+}
+
+type Query {
+    books: [Book!]!
+    book(id: ID!): Book
+    booksByAvailability(available: Boolean): [Book!]!
+}
+
+
+type Mutation {
+    createBook(title: String!): Book!
+    setAvailability(id: ID!, available: Boolean!): Book!
+    deleteBook(id: ID!): Boolean!
+}

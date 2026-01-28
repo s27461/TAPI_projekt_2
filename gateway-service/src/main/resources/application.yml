@@ -1,0 +1,36 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: gateway-service
+
+  cloud:
+    gateway:
+
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins:
+              - "http://localhost:3000"
+              - "http://localhost:3001"
+              - "http://localhost:3002"
+            allowedMethods:
+              - GET
+              - POST
+            allowedHeaders: "*"
+
+      routes:
+        - id: books-route
+          uri: http://localhost:18081
+          predicates:
+            - Path=/books/**
+          filters:
+            - StripPrefix=1
+
+        - id: reports-route
+          uri: http://localhost:18083
+          predicates:
+            - Path=/reports/**
+          filters:
+            - StripPrefix=0
